@@ -1,10 +1,11 @@
-2021-08-10 00:50:57,391 ERROR: Exception on /register [POST] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+2021-08-10 00:15:17,573 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-10 00:37:02,605 ERROR: Exception on /register [POST] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1772, in _execute_context
     cursor, statement, parameters, context
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.email
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
 
 The above exception was the direct cause of the following exception:
 
@@ -60,8 +61,7 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.email
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
 [SQL: INSERT INTO user (username, email, password_hash, about_me, last_seen) VALUES (?, ?, ?, ?, ?)]
-[parameters: ('kwargs', 'shirley@example.com', 'pbkdf2:sha256:260000$7xgKBCCiOkm72UX3$f1c180bc5680468074ac0eb32c7be094ce108d778fd281532372f4da8854dbc8', None, '2021-08-09 22:50:57.390463')]
+[parameters: ('zinedine', 'z@z.com', 'pbkdf2:sha256:260000$HbSyqukBOB3GHMHJ$6834523dcea90e5beb6d207dc140d71c2ef805985c06e452735c7f88df256909', None, '2021-08-09 22:37:02.604637')]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
-2021-08-10 00:52:16,286 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
