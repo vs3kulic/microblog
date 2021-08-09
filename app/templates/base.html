@@ -6,14 +6,16 @@
         <title>microblog</title>
         {% endif %}
     </head>
+    
     <body>
         
-        <div>
+        <div id="navbar">
           Microblog:
           <a href="{{ url_for('index') }}">Home</a>
           {% if current_user.is_anonymous %}
           <a href="{{ url_for('login') }}">Login</a>
           {% else %}
+          <a href="{{ url_for('user', username=current_user.username) }}">My profile</a>
           <a href="{{ url_for('logout') }}">Logout</a>
           {% endif %}
         </div>
@@ -28,6 +30,8 @@
         </ul>
         {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </body>
+
 </html>
