@@ -108,3 +108,4 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with valu
 2021-08-11 00:02:11,194 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
 2021-08-15 21:40:56,986 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
 2021-08-15 22:35:28,951 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-15 22:50:25,707 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
