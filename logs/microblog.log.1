@@ -1,71 +1,4 @@
-2021-08-10 22:20:56,013 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/clsregistry.py", line 393, in _resolve_name
-    rval = d[token]
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/_collections.py", line 746, in __missing__
-    self[key] = val = self.creator(key)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/clsregistry.py", line 372, in _access_cls
-    return self.fallback[key]
-KeyError: 'PostLike'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1511, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(func)()
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 70, in before_request
-    if current_user.is_authenticated:
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/local.py", line 422, in __get__
-    obj = instance._get_current_object()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/local.py", line 544, in _get_current_object
-    return self.__local()  # type: ignore
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/vajo/local/job/microblog/app/models.py", line 10, in load_user
-    return User.query.get(int(id))
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 550, in __get__
-    mapper = orm.class_mapper(type)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 442, in class_mapper
-    mapper = _inspect_mapped_class(class_, configure=configure)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 421, in _inspect_mapped_class
-    mapper._check_configure()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 1873, in _check_configure
-    _configure_registries({self.registry}, cascade=True)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 3384, in _configure_registries
-    _do_configure_registries(registries, cascade)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 3423, in _do_configure_registries
-    mapper._post_configure_properties()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 1890, in _post_configure_properties
-    prop.init()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/interfaces.py", line 222, in init
-    self.do_init()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2140, in do_init
-    self._process_dependent_arguments()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2235, in _process_dependent_arguments
-    self.target = self.entity.persist_selectable
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2102, in entity
-    argument = self._clsregistry_resolve_name(self.argument)()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/clsregistry.py", line 397, in _resolve_name
-    self._raise_for_name(name, err)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/clsregistry.py", line 383, in _raise_for_name
-    from_=err,
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Post->post, expression 'PostLike' failed to locate a name ('PostLike'). If this is a class name, consider adding this relationship() to the <class 'app.models.Post'> class after both dependent classes have been defined.
-2021-08-10 22:22:00,557 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 22:22:04,102 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+2021-08-10 23:47:07,556 ERROR: Exception on /user/yuri [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -91,13 +24,90 @@ Traceback (most recent call last):
     {% extends "base.html" %}
   File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
     {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 18, in block 'content'
-    {% if current_user.has_liked_post(post) %}
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/utils.py", line 84, in from_obj
-    if hasattr(obj, "jinja_pass_arg"):
-jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'has_liked_post'
-2021-08-10 22:23:16,970 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 22:33:45,182 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 22:33:54,614 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 23:45:27,214 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 23:46:34,203 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 16, in block 'content'
+    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
+2021-08-10 23:48:23,039 ERROR: Exception on /user/yuri [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 66, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
+    ctx.app,
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}
+  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 16, in block 'content'
+    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
+2021-08-10 23:48:25,748 ERROR: Exception on /user/alex [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 66, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
+    ctx.app,
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}
+  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 16, in block 'content'
+    <form action="{{ url_for('follow', username=user.username) }}" method="post">
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'follow' with values ['username']. Did you mean 'login' instead?
+2021-08-10 23:49:39,944 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-11 00:01:56,415 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-11 00:02:11,194 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-15 21:40:56,986 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-15 22:35:28,951 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-15 22:50:25,707 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-18 20:20:56,609 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-18 20:58:26,791 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]

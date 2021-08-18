@@ -1,4 +1,4 @@
-2021-08-10 00:45:40,095 ERROR: Exception on /register [POST] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+2021-08-10 00:47:56,564 ERROR: Exception on /register [POST] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1772, in _execute_context
     cursor, statement, parameters, context
@@ -62,5 +62,6 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
 [SQL: INSERT INTO user (username, email, password_hash, about_me, last_seen) VALUES (?, ?, ?, ?, ?)]
-[parameters: ('shirley', 'shirley@example.com', 'pbkdf2:sha256:260000$qKYipAjyEe9QKi4J$1bb1fa96508c2bc206ba968e482a06adf44ab8d8840230307e42ab2494a5fbb9', None, '2021-08-09 22:45:40.095082')]
+[parameters: ('yuri', 'y@y.com', 'pbkdf2:sha256:260000$uF2C8wJYv1Zi6Pjr$34c07cc68e823bb2283b89cbd7823a11433b12556e0e5948d3b72440762c305a', None, '2021-08-09 22:47:56.563823')]
 (Background on this error at: https://sqlalche.me/e/14/gkpj)
+2021-08-10 00:50:12,702 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
