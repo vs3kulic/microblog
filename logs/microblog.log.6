@@ -1,4 +1,68 @@
-2021-08-10 21:56:39,869 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+2021-08-10 22:17:10,349 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2748, in _determine_joins
+    consider_as_foreign_keys=consider_as_foreign_keys,
+  File "<string>", line 2, in join_condition
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/sql/selectable.py", line 1185, in _join_condition
+    a, b, constraints, consider_as_foreign_keys
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/sql/selectable.py", line 1310, in _joincond_trim_constraints
+    "join explicitly." % (a.description, b.description)
+sqlalchemy.exc.AmbiguousForeignKeysError: Can't determine join between 'user' and 'post'; tables have more than one foreign key constraint relationship between them. Please specify the 'onclause' of this join explicitly.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 70, in before_request
+    if current_user.is_authenticated:
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/local.py", line 422, in __get__
+    obj = instance._get_current_object()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/local.py", line 544, in _get_current_object
+    return self.__local()  # type: ignore
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/vajo/local/job/microblog/app/models.py", line 10, in load_user
+    return User.query.get(int(id))
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 550, in __get__
+    mapper = orm.class_mapper(type)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 442, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 421, in _inspect_mapped_class
+    mapper._check_configure()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 1873, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 3384, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 3423, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/mapper.py", line 1890, in _post_configure_properties
+    prop.init()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/interfaces.py", line 222, in init
+    self.do_init()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2142, in do_init
+    self._setup_join_conditions()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2254, in _setup_join_conditions
+    can_be_synced_fn=self._columns_are_mapped,
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2633, in __init__
+    self._determine_joins()
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 2807, in _determine_joins
+    from_=afe,
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.AmbiguousForeignKeysError: Could not determine join condition between parent/child tables on relationship User.posts - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2021-08-10 22:18:17,256 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-10 22:18:21,475 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,100 +93,4 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/app/models.py", line 53, in has_liked_post
     PostLike.post_id == post.id).count() > 0
 AttributeError: 'dict' object has no attribute 'id'
-2021-08-10 21:58:05,021 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 21:58:11,698 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 66, in user
-    return render_template('user.html', user=user, posts=posts)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
-    ctx.app,
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 18, in block 'content'
-    {% if current_user.has_liked_post(post) %}
-  File "/Users/vajo/local/job/microblog/app/models.py", line 53, in has_liked_post
-    PostLike.post_id == post.id).count() > 0
-AttributeError: 'dict' object has no attribute 'id'
-2021-08-10 22:00:14,277 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 22:00:25,402 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 66, in user
-    return render_template('user.html', user=user, posts=posts)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
-    ctx.app,
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 18, in block 'content'
-    {% if current_user.has_liked_post(post) %}
-  File "/Users/vajo/local/job/microblog/app/models.py", line 53, in has_liked_post
-    PostLike.post_id == post.id).count() > 0
-AttributeError: 'dict' object has no attribute 'id'
-2021-08-10 22:01:10,055 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-10 22:01:13,798 ERROR: Exception on /user/zinedine [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 66, in user
-    return render_template('user.html', user=user, posts=posts)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
-    ctx.app,
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/user.html", line 18, in block 'content'
-    {% if current_user.has_liked_post(post) %}
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/utils.py", line 84, in from_obj
-    if hasattr(obj, "jinja_pass_arg"):
-jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'has_liked_post'
-2021-08-10 22:05:41,655 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+2021-08-10 22:20:53,582 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
