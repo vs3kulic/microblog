@@ -1,55 +1,4 @@
-<<<<<<< HEAD
-2021-08-18 22:57:31,386 ERROR: Exception on /login [POST] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-=======
-2021-08-18 22:15:48,746 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
-Traceback (most recent call last):
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1515, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1513, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 1499, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-<<<<<<< HEAD
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 39, in login
-    if user is None or not user.check_password(form.password.data):
-  File "/Users/vajo/local/job/microblog/app/models.py", line 33, in check_password
-    return check_password_hash(self.password_hash, password)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/werkzeug/security.py", line 215, in check_password_hash
-    if pwhash.count("$") < 2:
-AttributeError: 'NoneType' object has no attribute 'count'
-2021-08-20 23:26:42,402 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-20 23:57:18,085 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:47]
-2021-08-20 23:57:31,252 ERROR: Exception on /explore [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-=======
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
-    next_url=next_url, prev_url=prev_url)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
-    ctx.app,
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 34, in top-level template code
-    {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'content'
-    {% include '_post.html' %}
-  File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ post.author.avatar(36) }}"></td>
-  File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
-    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-AttributeError: 'NoneType' object has no attribute 'lower'
-2021-08-18 22:17:12,563 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-18 22:17:16,775 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+2021-08-21 00:40:41,581 ERROR: Exception on /explore [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -61,11 +10,7 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-<<<<<<< HEAD
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 153, in explore
-=======
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 160, in explore
     next_url=next_url, prev_url=prev_url)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
     ctx.app,
@@ -75,9 +20,8 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-<<<<<<< HEAD
+  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "/Users/vajo/local/job/microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
@@ -89,25 +33,16 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
     {% block content -%}
   File "/Users/vajo/local/job/microblog/app/templates/base.html", line 48, in block 'content'
-    {% block app_content %}
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'app_content'
-=======
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 34, in top-level template code
-    {% block content %}
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'content'
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+    {% block app_content %}{% endblock %}
+  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 11, in block 'app_content'
     {% include '_post.html' %}
-  File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ post.author.avatar(36) }}"></td>
-  File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
-    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-AttributeError: 'NoneType' object has no attribute 'lower'
-<<<<<<< HEAD
-2021-08-20 23:58:00,672 ERROR: Exception on /explore [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
-=======
-2021-08-18 22:21:56,657 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
-2021-08-18 22:22:27,797 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+  File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
+  File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/utils.py", line 84, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'avatar'
+2021-08-21 00:41:01,649 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:51]
+2021-08-21 00:41:03,880 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -119,12 +54,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-<<<<<<< HEAD
-  File "/Users/vajo/local/job/microblog/app/routes.py", line 153, in explore
-=======
   File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
-    next_url=next_url, prev_url=prev_url)
+    posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
     ctx.app,
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
@@ -133,9 +64,8 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/jinja2/environment.py", line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-<<<<<<< HEAD
+  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "/Users/vajo/local/job/microblog/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
@@ -147,20 +77,12 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
     {% block content -%}
   File "/Users/vajo/local/job/microblog/app/templates/base.html", line 48, in block 'content'
-    {% block app_content %}
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'app_content'
-=======
-  File "/Users/vajo/local/job/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 19, in block 'content'
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+    {% block app_content %}{% endblock %}
+  File "/Users/vajo/local/job/microblog/app/templates/index.html", line 11, in block 'app_content'
     {% include '_post.html' %}
-  File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ post.author.avatar(36) }}"></td>
+  File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 5, in top-level template code
+    <img src="{{ post.author.avatar(70) }}" />
   File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
-    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-AttributeError: 'NoneType' object has no attribute 'lower'
-<<<<<<< HEAD
-=======
-2021-08-18 22:26:28,869 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+    digest = md5(self.email().encode('utf-8')).hexdigest()
+TypeError: 'str' object is not callable
+2021-08-21 00:41:23,340 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:51]

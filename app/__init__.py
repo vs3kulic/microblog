@@ -3,16 +3,13 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-<<<<<<< HEAD
 from flask_bootstrap import Bootstrap
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 import logging
-=======
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
 
 
 app = Flask(__name__)
@@ -20,11 +17,9 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-<<<<<<< HEAD
 bootstrap = Bootstrap(app)
 
-=======
->>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
+
 login.login_view = 'login'
 
 from app import routes, models, errors
