@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 2021-08-18 22:48:18,319 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+=======
+2021-08-18 22:12:22,303 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -11,7 +15,11 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
+<<<<<<< HEAD
     posts=posts.items, next_url=next_url, prev_url=prev_url)
+=======
+    next_url=next_url, prev_url=prev_url)
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
     ctx.app,
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
@@ -27,12 +35,20 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'content'
     {% include '_post.html' %}
   File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
+<<<<<<< HEAD
     <td><img src="{{ post.author.avatar(36) }}"></td>
   File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
     digest = md5(self.email.lower().encode('utf-8')).hexdigest()
 AttributeError: 'NoneType' object has no attribute 'lower'
 2021-08-18 22:48:28,891 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
 2021-08-18 22:48:30,614 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+=======
+    <td><img src="{{ post.author.avatar(32) }}"></td>
+  File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
+    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+AttributeError: 'NoneType' object has no attribute 'lower'
+2021-08-18 22:12:24,036 ERROR: Exception on /user/boot [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -44,6 +60,7 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
+<<<<<<< HEAD
   File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
     posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
@@ -66,6 +83,12 @@ Traceback (most recent call last):
     digest = md5(self.email.lower().encode('utf-8')).hexdigest()
 AttributeError: 'NoneType' object has no attribute 'lower'
 2021-08-18 22:48:36,509 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+=======
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 73, in user
+    page, app.config['POSTS_PER_PAGE'], False)
+NameError: name 'page' is not defined
+2021-08-18 22:12:25,130 ERROR: Exception on /explore [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -77,8 +100,13 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
+<<<<<<< HEAD
   File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
     posts=posts.items, next_url=next_url, prev_url=prev_url)
+=======
+  File "/Users/vajo/local/job/microblog/app/routes.py", line 152, in explore
+    next_url=next_url, prev_url=prev_url)
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
     ctx.app,
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
@@ -94,11 +122,19 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'content'
     {% include '_post.html' %}
   File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
+<<<<<<< HEAD
     <td><img src="{{ post.author.avatar(36) }}"></td>
   File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
     digest = md5(self.email.lower().encode('utf-8')).hexdigest()
 AttributeError: 'NoneType' object has no attribute 'lower'
 2021-08-18 22:48:37,845 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+=======
+    <td><img src="{{ post.author.avatar(32) }}"></td>
+  File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
+    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+AttributeError: 'NoneType' object has no attribute 'lower'
+2021-08-18 22:14:41,022 ERROR: Exception on /index [GET] [in /Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py:1455]
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
 Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/app.py", line 2070, in wsgi_app
     response = self.full_dispatch_request()
@@ -111,7 +147,11 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "/Users/vajo/local/job/microblog/app/routes.py", line 30, in index
+<<<<<<< HEAD
     posts=posts.items, next_url=next_url, prev_url=prev_url)
+=======
+    next_url=next_url, prev_url=prev_url)
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 150, in render_template
     ctx.app,
   File "/Users/vajo/local/job/microblog/venv/lib/python3.7/site-packages/flask/templating.py", line 128, in _render
@@ -127,8 +167,16 @@ Traceback (most recent call last):
   File "/Users/vajo/local/job/microblog/app/templates/index.html", line 21, in block 'content'
     {% include '_post.html' %}
   File "/Users/vajo/local/job/microblog/app/templates/_post.html", line 3, in top-level template code
+<<<<<<< HEAD
     <td><img src="{{ post.author.avatar(36) }}"></td>
   File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
     digest = md5(self.email.lower().encode('utf-8')).hexdigest()
 AttributeError: 'NoneType' object has no attribute 'lower'
 2021-08-18 22:52:28,020 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+=======
+    <td><img src="{{ post.author.avatar(32) }}"></td>
+  File "/Users/vajo/local/job/microblog/app/models.py", line 36, in avatar
+    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+AttributeError: 'NoneType' object has no attribute 'lower'
+2021-08-18 22:15:44,389 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:44]
+>>>>>>> a95ef38e97514b9a43eb0af98367714700e89e39
