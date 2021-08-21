@@ -86,3 +86,4 @@ Traceback (most recent call last):
     digest = md5(self.email.lower().encode('utf-8')).hexdigest()
 AttributeError: 'NoneType' object has no attribute 'lower'
 2021-08-21 00:45:01,586 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:51]
+2021-08-21 13:32:44,320 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:51]
