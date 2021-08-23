@@ -110,3 +110,4 @@ Traceback (most recent call last):
     return f'Logged in as {request.authorization.username}.'
 AttributeError: 'NoneType' object has no attribute 'username'
 2021-08-23 23:20:02,953 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:53]
+2021-08-23 23:57:09,104 INFO: Microblog startup [in /Users/vajo/local/job/microblog/app/__init__.py:53]
